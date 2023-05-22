@@ -6,6 +6,21 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_x3a3b"]
 radius = 11.0
 
+[sub_resource type="Animation" id="Animation_4gil8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_730ul"]
 resource_name = "move"
 length = 2.0
@@ -23,21 +38,6 @@ tracks/0/keys = {
 "values": [Vector2(0, 0), Vector2(-200, 0), Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_4gil8"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Area2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6607i"]
 _data = {
 "RESET": SubResource("Animation_4gil8"),
@@ -49,6 +49,8 @@ position = Vector2(-1.416, 0)
 script = ExtResource("1_7oimh")
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 texture = ExtResource("1_s10i3")
