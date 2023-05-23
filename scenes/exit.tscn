@@ -80,7 +80,7 @@ animations = [{
 size = Vector2(32, 7)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_45bdn"]
-size = Vector2(24, 29.375)
+size = Vector2(16.5, 8)
 
 [node name="Exit" type="Area2D"]
 collision_layer = 16
@@ -102,5 +102,5 @@ shape = SubResource("RectangleShape2D_20w3n")
 debug_color = Color(1, 0, 0.129412, 0.419608)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 17.6875)
+position = Vector2(0, 22)
 shape = SubResource("RectangleShape2D_45bdn")

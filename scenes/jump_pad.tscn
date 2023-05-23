@@ -79,7 +79,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c023y"]
 size = Vector2(22, 7)
 
-[node name="JumpPad" type="Area2D"]
+[node name="JumpPad" type="Area2D" groups=["jump_pads"]]
 collision_layer = 8
 collision_mask = 2
 script = ExtResource("1_vaft8")

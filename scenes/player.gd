@@ -4,21 +4,23 @@ extends CharacterBody2D
 @export var speed = 100
 @export var jumpforce = 200
 @onready var animated_sprite = $AnimatedSprite2D
+var freeze = false
 
 func _physics_process(delta):
 	velocity.y += gravity * delta
 	if velocity.y > 500 && !is_on_floor():
 		velocity.y = 500
-	
-	if Input.is_action_just_pressed("jump"): # && is_on_floor():
-		jump(jumpforce)
-	
-	var direction = Input.get_axis("left", "right")
+	var direction = 0
+	if !freeze:
+		if Input.is_action_just_pressed("jump"): 
+			jump(jumpforce)
+		
+		direction = Input.get_axis("left", "right")
 	velocity.x = direction * speed * delta * 100
 	
 	if direction!=0:
 		animated_sprite.flip_h = direction==-1
-	
+
 	handle_movement_anim(direction)	
 	move_and_slide()
 
